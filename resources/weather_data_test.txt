@@ -1,0 +1,5 @@
+Is it hot outside?
+Will it be windy?
+Will we see some sun?
+What is the expected high for today?
+Will it be foggy tomorrow morning?
