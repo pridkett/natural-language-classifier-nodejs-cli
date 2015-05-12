@@ -1,0 +1,38 @@
+{
+  "name": "natural-language-classifier-cli",
+  "version": "0.1.1",
+  "description": "IBM Watson Services Natural Language Classifier CLI tool",
+  "main": "natural-language-classifier-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watson-developer-cloud/natural-language-classifier-cli.git"
+  },
+  "keywords": [
+    "ibm",
+    "watson",
+    "wdc",
+    "watson developer cloud",
+    "natural language classifier"
+  ],
+  "author": "IBM Corp.",
+  "contributors": [
+    {
+      "name": "German Attanasio Ruiz",
+      "email": "germanatt@us.ibm.com"
+    },
+    {
+      "name": "Venkat Ganesh Sekar",
+      "email": "vganeshs@us.ibm.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/watson-developer-cloud/natural-language-classifier-cli/issues"
+  },
+  "dependencies": {
+    "watson-developer-cloud": "~0.9.11"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}

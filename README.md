@@ -71,8 +71,8 @@ Download the tutorial code and configure it. Install the node.js client.
 
 		```js
 		var natural_language_classifier = watson.natural_language_classifier({
-			username: 'bac515ff-37ae-4dee4-954e-5629c655ed35',
-			password: 'BylvjdyJzn42',
+			username: '<username>',
+			password: '<password>',
 			version: 'v1'
 		});
 		```
