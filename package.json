@@ -1,6 +1,6 @@
 {
   "name": "natural-language-classifier-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "IBM Watson Services Natural Language Classifier CLI tool",
   "main": "natural-language-classifier-cli",
   "repository": {
