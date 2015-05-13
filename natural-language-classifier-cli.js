@@ -41,10 +41,10 @@ switch (app_args._[0]) {
         if (err) {
           return console.log('Unable to read the file :', app_args.f);
         }
-        create(data);
+        create(JSON.parse(data));
       });
     } else if (app_args.d && !app_args.f) {
-      create(app_args.d);
+      create(JSON.parse(app_args.d));
     }
 
     break;

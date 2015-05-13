@@ -5,8 +5,9 @@ This is a command line interface (CLI) for the IBM Watson&trade; Natural Languag
 If you are not following the tutorial, ensure that you complete the following steps:
 
 1. Install [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/).
-2. Install the client: `$ npm install watson-developer-cloud --save`
-3. Edit `creds.js` and enter the credentials from VCAP_SERVICES. For details, see [Obtain your Bluemix credentials](#stage-1-obtain-your-bluemix-credentials) in the tutorial.
+2. Checkout this repository.
+3. `$ cd natural-language-classifier-cli`. Edit `creds.js` and enter the credentials from VCAP_SERVICES. For details, see [Obtain your Bluemix credentials](#stage-1-obtain-your-bluemix-credentials) in the tutorial.
+4. `$ npm install --save`
 
 For a list of available commands, run `$ node natural-language-classifier-cli.js --help`.
 
@@ -79,10 +80,10 @@ Download the tutorial code and configure it. Install the node.js client.
 
 	3. Save the `creds.js` file.
 
-4. Install the Watson Developer Cloud Node.js client:
+4. Install the Natural Language Classifier CLI:
 
 	```node
-	$ npm install watson-developer-cloud --save
+	$ npm install --save
 	```
 
 ***
