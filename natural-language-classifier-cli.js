@@ -113,6 +113,8 @@ function deleteClassifier(classifierId) {
   natural_language_classifier.remove({ classifier: classifierId }, function(err, response) {
     if (err)
       console.log('error:', err);
+    else if(Object.keys(response).length===0) 
+    console.log('Classifier \''+classifierId+'\' deleted');
     else
       console.log(response);
   });
