@@ -194,10 +194,10 @@ So that you can create classifiers for your own use and with your own ground tru
 ## License
 
 This library is licensed under Apache 2.0. Full license text is available in
-[COPYING](blob/master/LICENSE).
+[COPYING](LICENSE).
 
 ## Contributing
-See [CONTRIBUTING](blob/master/CONTRIBUTING.md).
+See [CONTRIBUTING](CONTRIBUTING.md).
 
 
 [sign_up]: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI
