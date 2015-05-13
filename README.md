@@ -6,7 +6,7 @@ If you are not following the tutorial, ensure that you complete the following st
 
 1. Install [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/).
 2. Install the client: `$ npm install watson-developer-cloud --save`
-3. Edit `creds.js` and enter the credentials from VCAP_SERVICES. For details, see [Obtain your Bluemix credentials](#stage-1:-obtain-your-bluemix-credentials) in the tutorial.
+3. Edit `creds.js` and enter the credentials from VCAP_SERVICES. For details, see [Obtain your Bluemix credentials](#stage-1-obtain-your-bluemix-credentials) in the tutorial.
 
 For a list of available commands, run `$ node natural-language-classifier-cli.js --help`.
 
