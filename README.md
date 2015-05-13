@@ -1,29 +1,28 @@
-# Introduction
-This is a command line interface (CLI) for the IBM Watson&trade; Natural Language Classifier service.
+# Natural Language Classifier CLI tool 
+Command line interface (CLI) for the IBM Watson&trade; Natural Language Classifier service. 
 
-# Quick Start
-If you are not following the tutorial, ensure that you complete the following steps:
-
-1. Install [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/).
-2. Checkout this repository.
-3. `$ cd natural-language-classifier-cli`. Edit `creds.js` and enter the credentials from VCAP_SERVICES. For details, see [Obtain your Bluemix credentials](#stage-1-obtain-your-bluemix-credentials) in the tutorial.
-4. `$ npm install --save`
-
-For a list of available commands, run `$ node natural-language-classifier-cli.js --help`.
-
-# Tutorial
-
-The IBM Watson&trade; Natural Language Classifier tutorial guides you through the process of creating and setting up a classifier by using the Node.js wrapper command line interface. This tutorial teaches you how to create, train, and use a classifier.
+## Tutorial
+This tutorial guides you through the process of creating and setting up a classifier by using the Node.js wrapper command line interface. This tutorial teaches you how to create, train, and use a classifier.
 
 In this tutorial, you train a classifier that can interpret a weather-related question and return either "temperature" or "condition." For example, for the question, "Is it windy," the system returns "conditions".  For the question, "Is it hot outside," the service returns "temperature".
 
 ***
 ## Before you begin
-Ensure that you have the necessary prerequisites before you start the tutorial:
+Ensure that you have the necessary prerequisites before you start:
 
 * You need a Bluemix account for this tutorial. If you don't have one, [sign up][sign_up]. For more details about the process, see [Developing Watson applications with Bluemix][dev_wdc_apps].
 * The tutorial is designed to use the [Cloud-foundry CLI][cloud_foundry] tool. Download and install the tool if you haven't already.
 * The tutorial uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/). Download and install those tools if you haven't already.
+
+## Stages
+To get started with the Natural Language Classifier CLI and complete the tutorial, complete each of the following stages in order:
+
+1. [Obtain your Bluemix credentials](#stage-1-obtain-your-bluemix-credentials) 
+2. [Configure the code to connect to your service](#stage-2-configure-the-code-to-connect-to-your-service)
+3. [Create and train a classifier](#stage-3-create-and-train-a-classifier)
+4. [Monitor the training status of the classifier](#stage-4-monitor-the-training-status-of-the-classifier) 
+5. [Use the classifier](#stage-5-use-the-classifier)
+6. [Delete the tutorial classifier](#stage-6-delete-the-tutorial-classifier)
 
 
 ***
@@ -57,7 +56,7 @@ Before you can work with a service in Bluemix, you must obtain your Bluemix cred
 Download the tutorial code and configure it. Install the node.js client.
 
 1. Set up your environment:
-	1. Download the `.zip` file that contains the source code from this project. If you are familiar with Git, fork the repository into your Git namespace or clone it to your local system.
+	1. Download the [.zip](https://github.com/watson-developer-cloud/natural-language-classifier-nodejs-cli/archive/master.zip) file that contains the source code from this project. If you are familiar with Git, fork the repository into your Git namespace or clone it to your local system.
 	2. Extract the package to a new directory.
 
 2. Change to the new directory that contains this tutorial, for example:
@@ -80,10 +79,10 @@ Download the tutorial code and configure it. Install the node.js client.
 
 	3. Save the `creds.js` file.
 
-4. Install the Natural Language Classifier CLI:
+4. Install the Natural Language Classifier CLI package:
 
 	```node
-	$ npm install --save
+	$ npm install
 	```
 
 ***
@@ -94,7 +93,7 @@ The classifier learns from examples before it can return information for texts t
 To speed up this step, the `train.json` file is included the ground truth data. The file is already formatted to work with the Natural Language Classification service.
 
 
-1. Connect to Bluemix with the Cloud-foundry CLI:
+1. Set the target endpoint and log in to Bluemix by using the Cloud-foundry CLI:
 
 	```sh
 	$ cf api https://api.ng.bluemix.net
@@ -118,6 +117,8 @@ To speed up this step, the `train.json` file is included the ground truth data. 
 ## Stage 4: Monitor the training status of the classifier
 
 The new classifier must finish training and return the status of `Available` before you can work with it.
+
+**Tip:** For a list of available commands, run `$ node natural-language-classifier-cli.js --help`.
 
 1. Run the following command to retrieve the status of classifier that you created in the previous stage. Replace `<classifier_id>` with the ID of your classifier:
 
@@ -184,6 +185,20 @@ So that you can create classifiers for your own use and with your own ground tru
 * To explore the API in detail, see the [API reference][reference].
 
 * Review the Natural Language Classifier [Nodes.js sample application](href="https://github.com/watson-developer-cloud/natural-language-classifier-nodejs) in the `watson-developer-cloud` namespace on GitHub.
+
+***
+
+## Open Source @ IBM
+[Find more open source projects on the IBM Github Page.](http://ibm.github.io/)
+
+## License
+
+This library is licensed under Apache 2.0. Full license text is available in
+[COPYING](blob/master/LICENSE).
+
+## Contributing
+See [CONTRIBUTING](blob/master/CONTRIBUTING.md).
+
 
 [sign_up]: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI
 [dev_wdc_apps]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/gs-bluemix.shtml
