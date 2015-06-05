@@ -7,7 +7,7 @@ In this tutorial, you train a classifier that can interpret a weather-related qu
 ## Before you begin
 Ensure that you have the prerequisites before you start:
 
-* You need a Bluemix account for this tutorial. If you don't have one, [sign up][sign_up]. For more information about the process, see [Developing Watson applications with Bluemix][dev_wdc_apps].
+* You need a Bluemix account for this tutorial. If you don't have one, <a target="_blank" href="https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI">sign up</a>. For more information about the process, see <a target="_blank" href="http://http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/gs-bluemix.shtml">Developing Watson applications with Bluemix</a>.
 * The tutorial uses the Cloud-foundry CLI</a> tool to communicate with Bluemix. <a target="_blank" href="https://github.com/cloudfoundry/cli/releases">Download</a> and install the Cloud-foundry tool if you haven't already.
 * The tutorial uses the Node.js and the npm command-line tools: 
     * To verify that Node.js is installed, run the following command:
@@ -124,10 +124,10 @@ To speed up this step, the `train.json` file is included as training data. The f
 
 	```JSON
 	{
-		classifiers: [ 
+		"classifiers": [ 
 			{
-				classifier_id: "10D41B-nlc-1",
-				url: "https://gateway.watsonplatform.net/natural-language-classifier-experimental/api/v1/classifiers/10D41B-nlc-1"
+				"classifier_id": "10D41B-nlc-1",
+				"url": "https://gateway.watsonplatform.net/natural-language-classifier-experimental/api/v1/classifiers/10D41B-nlc-1"
 			} 
 		]
 	}
@@ -191,10 +191,10 @@ You successfully completed the process of training and querying a classifier in 
 
 So that you can create classifiers for your own use and with your own ground truth, you might want to delete this classifier from the tutorial. To delete the classifier that you created in this tutorial, call the `DELETE v1/classifiers/{classifier_id}` method:
 
-* Run the following command to delete the classifier. Replace `<classifier_id>` with the ID of your classifier:
+* Run the `delete` command to delete the classifier. Include the `classifier_id` for the classifier you want to delete.  For example:
 
 	```node
-	$ node natural-language-classifier-cli.js delete -c <classifier_id>
+	$ node natural-language-classifier-cli.js delete -c 10D41B-nlc-1
 	```
 
 	If the classifier is deleted, the response is an HTTP 200 code.
@@ -221,8 +221,6 @@ This library is licensed under Apache 2.0. Full license text is available in
 See [CONTRIBUTING](CONTRIBUTING.md).
 
 
-[sign_up]: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI
-[dev_wdc_apps]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/gs-bluemix.shtml
 [overview]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/nl-classifier/
 [reference]: http://watson.stage1.mybluemix.net/apis/#!/natural-language-classifier
 
