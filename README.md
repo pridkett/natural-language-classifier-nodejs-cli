@@ -108,14 +108,7 @@ The classifier learns from examples before it can return information for texts t
 
 To speed up this step, the `train.json` file is included as training data. The file is already formatted to work with the Natural Language Classifier service.
 
-1. Set the target endpoint and log in to Bluemix by using the Cloud-foundry CLI. **Important**: The login uses your Bluemix account email and password:
-
-	```sh
-	$ cf api https://api.ng.bluemix.net
-	$ cf login -u <username>
-	```
-
-2. Run the following command to post the data and create the classifier.
+1. Run the following command to post the data and create the classifier.
 
 	```node
 	$ node natural-language-classifier-cli.js create -f resources/weather_data_train.json
