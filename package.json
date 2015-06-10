@@ -30,6 +30,7 @@
     "url": "https://github.com/watson-developer-cloud/natural-language-classifier-cli/issues"
   },
   "dependencies": {
+    "async": "^1.2.1",
     "optimist": "~0.6.1",
     "watson-developer-cloud": "~0.9.11"
   },

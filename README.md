@@ -33,7 +33,8 @@ To get started with the Natural Language Classifier service and complete the tut
 3. [Create and train a classifier](#stage-3-create-and-train-a-classifier)
 4. [Monitor the training status of the classifier](#stage-4-monitor-the-training-status-of-the-classifier) 
 5. [Use the classifier](#stage-5-use-the-classifier)
-6. [Delete the tutorial classifier](#stage-6-delete-the-tutorial-classifier)
+6. [Run a ground truth test against the classifier](#stage-6-run-a-ground-truth-test-against-the-classifier)
+7. [Delete the tutorial classifier](#stage-7-delete-the-tutorial-classifier)
 
 
 ***
@@ -186,7 +187,42 @@ Now that the classifier is trained, you can query it.
 
 ***
 
-## Stage 6: Delete the tutorial classifier
+## Stage 6: Run a ground truth test against the classifier
+Typically when building a machine learning model you'll want to run a test against the model to get an idea of its
+overall performance. This system support running a test, sometimes called a blind test, against the classifier and
+outputting the results as either a JSON or CSV file.
+
+1. Create a new set of test data. This should be a file in the same format as the training data that you used in stage
+3, above. However, this should be a new set of text and classes as feeding the data back in will likely result in
+perfect accuract.
+
+2. Run the following command:
+
+    ```node
+    $ node natural-langauge-classifier-cli.js blind -c <classifier_id> -f resources/weather_data_blind.json -x blindtest.csv -j blindtext.json 
+    ```
+
+3. This will output a single line of text on the command line that says the accuracy of the model. In this case the
+accuracy is measured as the percentage of text for which the top match from the classifier was one of the classes
+attached to the text. For example, if a text that was mapped against three classes, A, B, and C and came back with
+a top match of B woudl be considered to be an exact match.
+
+4. If the optional `-x` or `-j` arguments are provided a CSV and JSON file will be written. The CSV file has the following
+columns:
+
+  * **text**: the text passed into the classifier for classification
+  * **top_class**: the best class as returned by the classifier
+  * **exact_match**: 1 if the top class was also in the classes used in the blind data, 0 otherwise
+  * **top_3**: 1 if the any of the top three classes returned by the classifier was in the blind data, 0 otherwise
+  * **top_5**: 1 if the any of the top five classes returned by the classifier was in the blind data, 0 otherwise
+  * **match_fail**: 1 if none of the top ten classes returned by the classifier were in the blind data, 0 otherwise
+  
+The JSON data contains all the same information but also contains more raw information about the confidence of each
+text passed to the classifier and can be used for more advanced analytics and reports.
+
+***
+
+## Stage 7: Delete the tutorial classifier
 You successfully completed the process of training and querying a classifier in the Natural Language Classifier service.
 
 So that you can create classifiers for your own use and with your own ground truth, you might want to delete this classifier from the tutorial. To delete the classifier that you created in this tutorial, call the `DELETE v1/classifiers/{classifier_id}` method:
