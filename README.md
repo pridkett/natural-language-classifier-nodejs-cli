@@ -8,7 +8,6 @@ In this tutorial, you train a classifier that can interpret a weather-related qu
 Ensure that you have the prerequisites before you start:
 
 * You need a Bluemix account for this tutorial. If you don't have one, <a target="_blank" href="https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI">sign up</a>. For more information about the process, see <a target="_blank" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/gs-bluemix.shtml">Developing Watson applications with Bluemix</a>.
-* The tutorial uses the Cloud-foundry CLI tool to communicate with Bluemix. <a target="_blank" href="https://github.com/cloudfoundry/cli/releases">Download</a> and install the Cloud-foundry tool if you haven't already.
 * The tutorial uses the Node.js and the npm command-line tools: 
     * To verify that Node.js is installed, run the following command:
 
