@@ -104,7 +104,7 @@ Download the tutorial code and configure it. Install the node.js client.
 ## Stage 3: Create and train a classifier
 The classifier learns from examples before it can return information for texts that it hasn't seen before. The example data is referred to as "training data." Training data is a set of text and one or more class identifiers. You upload the training data when you create a classifier.
 
-To speed up this step, the `train.json` file is included as training data. The file is already formatted to work with the Natural Language Classifier service.
+To speed up this step, the `weather_data_train.json` file in the resources directory is included as training data. The file is already formatted to work with the Natural Language Classifier service.
 
 1. Run the following command to post the data and create the classifier.
 
