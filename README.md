@@ -27,7 +27,7 @@ Ensure that you have the prerequisites before you start:
 ## Stages
 To get started with the Natural Language Classifier service and complete the tutorial, complete each of the following stages in order:
 
-1. [Obtain your Bluemix credentials](#stage-1-obtain-your-bluemix-credentials) 
+1. [Obtain your service credentials](#stage-1-obtain-your-service-credentials) 
 2. [Configure the code to connect to your service](#stage-2-configure-the-code-to-connect-to-your-service)
 3. [Create and train a classifier](#stage-3-create-and-train-a-classifier)
 4. [Monitor the training status of the classifier](#stage-4-monitor-the-training-status-of-the-classifier) 
