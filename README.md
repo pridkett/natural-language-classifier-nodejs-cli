@@ -8,7 +8,6 @@ In this tutorial, you train a classifier that can interpret a weather-related qu
 Ensure that you have the prerequisites before you start:
 
 * You need a Bluemix account for this tutorial. If you don't have one, <a target="_blank" href="https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI">sign up</a>. For more information about the process, see <a target="_blank" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/gs-bluemix.shtml">Developing Watson applications with Bluemix</a>.
-* The tutorial uses the Cloud-foundry CLI tool to communicate with Bluemix. <a target="_blank" href="https://github.com/cloudfoundry/cli/releases">Download</a> and install the Cloud-foundry tool if you haven't already.
 * The tutorial uses the Node.js and the npm command-line tools: 
     * To verify that Node.js is installed, run the following command:
 
@@ -28,7 +27,7 @@ Ensure that you have the prerequisites before you start:
 ## Stages
 To get started with the Natural Language Classifier service and complete the tutorial, complete each of the following stages in order:
 
-1. [Obtain your Bluemix credentials](#stage-1-obtain-your-bluemix-credentials) 
+1. [Obtain your service credentials](#stage-1-obtain-your-service-credentials) 
 2. [Configure the code to connect to your service](#stage-2-configure-the-code-to-connect-to-your-service)
 3. [Create and train a classifier](#stage-3-create-and-train-a-classifier)
 4. [Monitor the training status of the classifier](#stage-4-monitor-the-training-status-of-the-classifier) 
@@ -106,7 +105,7 @@ Download the tutorial code and configure it. Install the node.js client.
 ## Stage 3: Create and train a classifier
 The classifier learns from examples before it can return information for texts that it hasn't seen before. The example data is referred to as "training data." Training data is a set of text and one or more class identifiers. You upload the training data when you create a classifier.
 
-To speed up this step, the `train.json` file is included as training data. The file is already formatted to work with the Natural Language Classifier service.
+To speed up this step, the `weather_data_train.json` file in the resources directory is included as training data. The file is already formatted to work with the Natural Language Classifier service.
 
 1. Run the following command to post the data and create the classifier.
 
