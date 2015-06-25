@@ -19,6 +19,7 @@ var app_args = require('optimist').argv;
 var fs = require('fs');
 var async = require('async');
 var natural_language_classifier = require('./creds.js');
+var MAP_LIMIT = 12;
 
 var main_help = '\nIBM Watson Natural Language Classifier Service\n\nUsage: \n';
 var train_help = '\t Create: \t node natural-language-classifier-cli.js create [-d JSON_DATA | -f JSON_FILE] \n';
@@ -26,7 +27,7 @@ var status_help = '\t Status: \t node natural-language-classifier-cli.js status 
 var classify_help = '\t Classify: \t node natural-language-classifier-cli.js classify [-c CLASSIFIER_ID] [-t QUESTION_TEXT] \n';
 var list_help = '\t List: \t\t node natural-language-classifier-cli.js list\n';
 var delete_help = '\t Delete: \t node natural-language-classifier-cli.js delete [-c CLASSIFIER_ID]\n';
-var blind_help = '\t Blind: \t node natural-langauge-classifier-cli.js blind [-c CLASSIFIER_ID] [-d JSON_DATA | -f JSON_FILE] [-x CSV_OUTPUT_FILE:optional] [-j JSON_OUTPUT_FILE:optional]\n';
+var blind_help = '\t Blind: \t node natural-language-classifier-cli.js blind [-c CLASSIFIER_ID] [-d JSON_DATA | -f JSON_FILE] [-x CSV_OUTPUT_FILE:optional] [-j JSON_OUTPUT_FILE:optional] [-l MAP_LIMIT:optional]\n';
 
 var help = main_help + train_help + status_help + classify_help + list_help + delete_help + blind_help;
 if ((app_args.h) || (app_args.help)) {
@@ -78,15 +79,16 @@ switch (app_args._[0]) {
     if (!app_args.d && !app_args.f) {
       callHelp();
     }
+    var mapLimit = app_args.l || MAP_LIMIT;
     if (app_args.f && !app_args.d) {
       fs.readFile(app_args.f, 'utf8', function(err, data) {
         if (err) {
           return console.log('Unable to read the file :', app_args.f);
         }
-        blind(app_args.c, JSON.parse(data), app_args.x, app_args.j);
+        blind(app_args.c, JSON.parse(data), app_args.x, app_args.j, app_args.l);
       });
     } else {
-      blind(app_args.c, app_args.d, app_args.x, app_args.j);
+      blind(app_args.c, app_args.d, app_args.x, app_args.j, app_args.l);
     }
     break;
   default:
@@ -168,13 +170,14 @@ function resultsToCSV(csvfile, results, callback) {
   })
 }
 
-function blind(classifierId, classifierData, outputCSV, outputJSON) {
+function blind(classifierId, classifierData, outputCSV, outputJSON, mapLimit) {
+  mapLimit = mapLimit || MAP_LIMIT;
   if (!classifierData.training_data) {
     console.err('Please ensure that the data to test is formatted as training data');
   }
 
-  async.map(
-    classifierData.training_data,
+  async.mapLimit(
+    classifierData.training_data, mapLimit,
     function(elem, callback) {
       natural_language_classifier.classify(
         {classifier: classifierId, text: elem.text},
