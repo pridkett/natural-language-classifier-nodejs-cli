@@ -42,7 +42,7 @@ Before you can work with a service in Bluemix, you must obtain your service cred
 
 The following steps obtain the service credentials by creating a web application in Node.js for the Natural Language Classifier service. You are completing these steps only to obtain your service credentials for Bluemix.
 
-To view a video, see <a target = "_blank" href="https://www.youtube.com/watch?v=X95CMuQys-g">Getting Service Credentials</a>.
+To view a video, see <a target = "_blank" href="https://www.youtube.com/watch?v=B_m3mBadUrQ">Getting Service Credentials</a>.
 
 1. Log in to Bluemix:
 	1. Click **LOG IN** in the upper right corner of the page at <a target="_blank" href="https://console.ng.bluemix.net">console.ng.bluemix.net</a>.
